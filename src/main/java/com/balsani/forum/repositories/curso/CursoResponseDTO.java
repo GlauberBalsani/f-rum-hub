@@ -1,7 +1,4 @@
-package com.balsani.forum.domain.curso.model.dto;
-
-import com.balsani.forum.domain.curso.model.Categoria;
-import com.balsani.forum.domain.curso.model.Curso;
+package com.balsani.forum.repositories.curso;
 
 public record CursoResponseDTO(
         String nome,

@@ -1,4 +1,4 @@
-package com.balsani.forum.domain.usuario.model.dto;
+package com.balsani.forum.domain.usuario;
 
 public record UsuarioRequestDTO(
         String nome,

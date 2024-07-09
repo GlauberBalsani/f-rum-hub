@@ -1,4 +1,4 @@
-package com.balsani.forum.domain.curso.model;
+package com.balsani.forum.repositories.curso;
 
 public enum Categoria {
     PROGRAMACAO,

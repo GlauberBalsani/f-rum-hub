@@ -1,7 +1,6 @@
-package com.balsani.forum.domain.usuario.model;
+package com.balsani.forum.domain.usuario;
 
 import jakarta.persistence.*;
-import org.hibernate.annotations.TypeBinderType;
 
 import java.util.Objects;
 

@@ -1,7 +1,7 @@
-package com.balsani.forum.domain.forum.model;
+package com.balsani.forum.domain.forum;
 
-import com.balsani.forum.domain.curso.model.Curso;
-import com.balsani.forum.domain.usuario.model.Usuario;
+import com.balsani.forum.repositories.curso.Curso;
+import com.balsani.forum.domain.usuario.Usuario;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
@@ -18,10 +18,10 @@ public class Topico {
     private LocalDateTime dataCriacao;
     @Enumerated(EnumType.STRING)
     private Status status;
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "autor_id")
     private Usuario autor;
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "curso_id")
     private Curso curso;
 

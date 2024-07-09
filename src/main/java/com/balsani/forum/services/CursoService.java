@@ -1,14 +1,14 @@
 package com.balsani.forum.services;
 
-import com.balsani.forum.domain.curso.model.Curso;
-import com.balsani.forum.domain.curso.model.CursoRepository;
-import com.balsani.forum.domain.curso.model.dto.CursoRequestDTO;
-import com.balsani.forum.domain.curso.model.dto.CursoResponseDTO;
+import com.balsani.forum.repositories.curso.Curso;
+import com.balsani.forum.repositories.CursoRepository;
+import com.balsani.forum.repositories.curso.CursoRequestDTO;
+import com.balsani.forum.repositories.curso.CursoResponseDTO;
+import com.balsani.forum.infra.NotFoundException;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class CursoService {
@@ -39,6 +39,6 @@ public class CursoService {
 
         return repository.findById(id)
                 .map(CursoResponseDTO::new)
-                .orElseThrow(() -> new RuntimeException("Curso não encontrada"));
+                .orElseThrow(() -> new NotFoundException("Curso não encontrada" + id));
     }
 }

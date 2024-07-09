@@ -1,6 +1,6 @@
-package com.balsani.forum.domain.forum.model;
+package com.balsani.forum.domain.forum;
 
-import com.balsani.forum.domain.usuario.model.Usuario;
+import com.balsani.forum.domain.usuario.Usuario;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;

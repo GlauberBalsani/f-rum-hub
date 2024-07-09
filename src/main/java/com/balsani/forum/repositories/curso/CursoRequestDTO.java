@@ -1,7 +1,5 @@
-package com.balsani.forum.domain.curso.model.dto;
+package com.balsani.forum.repositories.curso;
 
-import com.balsani.forum.domain.curso.model.Categoria;
-import com.balsani.forum.domain.curso.model.Curso;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
