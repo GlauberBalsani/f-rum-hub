@@ -1,7 +1,7 @@
 package com.balsani.forum.controller;
 
-import com.balsani.forum.repositories.curso.CursoRequestDTO;
-import com.balsani.forum.repositories.curso.CursoResponseDTO;
+import com.balsani.forum.domain.curso.CursoRequestDTO;
+import com.balsani.forum.domain.curso.CursoResponseDTO;
 import com.balsani.forum.services.CursoService;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;

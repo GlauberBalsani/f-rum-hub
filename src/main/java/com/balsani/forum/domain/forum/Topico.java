@@ -1,6 +1,6 @@
 package com.balsani.forum.domain.forum;
 
-import com.balsani.forum.repositories.curso.Curso;
+import com.balsani.forum.domain.curso.Curso;
 import com.balsani.forum.domain.usuario.Usuario;
 import jakarta.persistence.*;
 
@@ -28,7 +28,12 @@ public class Topico {
     @OneToMany(mappedBy = "topico", cascade = CascadeType.ALL)
     private List<Resposta> respostas;
 
-    public Topico(){}
+    @PrePersist
+    protected void onCreate() {
+        this.dataCriacao = LocalDateTime.now();
+    }
+
+
 
     public Long getId() {
         return id;

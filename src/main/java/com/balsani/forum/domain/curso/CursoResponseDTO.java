@@ -1,4 +1,4 @@
-package com.balsani.forum.repositories.curso;
+package com.balsani.forum.domain.curso;
 
 public record CursoResponseDTO(
         String nome,

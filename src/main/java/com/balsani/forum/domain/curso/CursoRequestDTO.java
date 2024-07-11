@@ -1,4 +1,4 @@
-package com.balsani.forum.repositories.curso;
+package com.balsani.forum.domain.curso;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;

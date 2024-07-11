@@ -1,9 +1,9 @@
 package com.balsani.forum.services;
 
-import com.balsani.forum.repositories.curso.Curso;
+import com.balsani.forum.domain.curso.Curso;
 import com.balsani.forum.repositories.CursoRepository;
-import com.balsani.forum.repositories.curso.CursoRequestDTO;
-import com.balsani.forum.repositories.curso.CursoResponseDTO;
+import com.balsani.forum.domain.curso.CursoRequestDTO;
+import com.balsani.forum.domain.curso.CursoResponseDTO;
 import com.balsani.forum.infra.NotFoundException;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
