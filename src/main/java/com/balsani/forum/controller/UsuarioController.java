@@ -30,9 +30,9 @@ public class UsuarioController {
 
     }
 
-    @GetMapping
-    public ResponseEntity<Page<UsuarioResponseDTO>> getAll(@PageableDefault(size = 10, sort = {"nome"})Pageable pageable) {
-        var page =
-
-    }
+//    @GetMapping
+//    public ResponseEntity<Page<UsuarioResponseDTO>> getAll(@PageableDefault(size = 10, sort = {"nome"})Pageable pageable) {
+//        var page = usuarioService.getAll()
+//
+//    }
 }

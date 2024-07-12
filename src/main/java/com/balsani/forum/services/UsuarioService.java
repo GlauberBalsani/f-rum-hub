@@ -3,9 +3,13 @@ package com.balsani.forum.services;
 import com.balsani.forum.domain.usuario.Usuario;
 import com.balsani.forum.domain.usuario.UsuarioRequestDTO;
 
+import com.balsani.forum.domain.usuario.UsuarioResponseDTO;
 import com.balsani.forum.repositories.UsuarioRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 
 @Service
@@ -29,6 +33,19 @@ public class UsuarioService {
 
         return UsuarioRequestDTO.toModel(usuario);
 
+    }
+
+    public List<UsuarioResponseDTO> getAll() {
+        return usuarioRepository.
+                findAll()
+                .stream()
+                .map(usuario -> new UsuarioResponseDTO(
+                        usuario.getId(),
+                        usuario.getNome(),
+                        usuario.getEmail()
+
+                ))
+                .collect(Collectors.toList());
     }
 
 
