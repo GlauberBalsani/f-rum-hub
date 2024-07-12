@@ -39,8 +39,15 @@ public class UsuarioController {
     @GetMapping
     public ResponseEntity<List<UsuarioResponseDTO>> getAll(@PageableDefault(size = 10, sort = {"nome"})Pageable pageable) {
         List<UsuarioResponseDTO> usuarios = usuarioService.getAll();
-        
+
         return ResponseEntity.ok(usuarios);
 
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<UsuarioResponseDTO> findById(@PathVariable Long id) {
+        var usuario = usuarioService.getById(id);
+
+        return ResponseEntity.ok(usuario);
     }
 }

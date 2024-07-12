@@ -4,6 +4,7 @@ import com.balsani.forum.domain.usuario.Usuario;
 import com.balsani.forum.domain.usuario.UsuarioRequestDTO;
 
 import com.balsani.forum.domain.usuario.UsuarioResponseDTO;
+import com.balsani.forum.infra.NotFoundException;
 import com.balsani.forum.repositories.UsuarioRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
@@ -47,6 +48,14 @@ public class UsuarioService {
                 ))
                 .collect(Collectors.toList());
     }
+
+    public UsuarioResponseDTO getById(Long id) {
+        return usuarioRepository.findById(id).map(UsuarioResponseDTO::new)
+                .orElseThrow(()-> new NotFoundException("Usuário não encontrado com esse id"));
+
+    }
+
+
 
 
 }
