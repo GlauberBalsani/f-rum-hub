@@ -1,17 +1,17 @@
 package com.balsani.forum.controller;
 
 import com.balsani.forum.domain.usuario.UsuarioRequestDTO;
+import com.balsani.forum.domain.usuario.UsuarioRequestUpdateDTO;
 import com.balsani.forum.domain.usuario.UsuarioResponseDTO;
 import com.balsani.forum.repositories.UsuarioRepository;
 import com.balsani.forum.services.UsuarioService;
 import jakarta.validation.Valid;
-import org.hibernate.query.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
-import org.w3c.dom.stylesheets.LinkStyle;
+
 
 import java.util.List;
 
@@ -50,4 +50,19 @@ public class UsuarioController {
 
         return ResponseEntity.ok(usuario);
     }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<UsuarioRequestUpdateDTO> update(@PathVariable  Long id,
+                                                          @RequestBody @Valid UsuarioRequestUpdateDTO updateDTO) {
+        usuarioService.updateById(id, updateDTO);
+
+        return ResponseEntity.ok().body(updateDTO);
+
+
+    }
+
+    @DeleteMapping("/{id}")
+
+
+
 }
