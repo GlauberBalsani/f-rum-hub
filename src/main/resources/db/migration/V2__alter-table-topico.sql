@@ -1,1 +1,0 @@
-ALTER TABLE topico ADD COLUMN data_criacao TIMESTAMP;

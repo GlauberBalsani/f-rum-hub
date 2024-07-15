@@ -31,7 +31,7 @@ public class UsuarioController {
     public ResponseEntity<UsuarioRequestDTO> create(@Valid @RequestBody UsuarioRequestDTO usuarioRequestDTO,
                                                     UriComponentsBuilder builder) {
         var usuario = usuarioService.create(usuarioRequestDTO);
-        var uri = builder.path("/cursos/{nome}").buildAndExpand(usuario.nome()).toUri();
+        var uri = builder.path("/usuario/{nome}").buildAndExpand(usuario.nome()).toUri();
         return ResponseEntity.created(uri).body(usuario);
 
     }
@@ -62,6 +62,11 @@ public class UsuarioController {
     }
 
     @DeleteMapping("/{id}")
+    public ResponseEntity delete(@PathVariable Long id) {
+        usuarioService.delete(id);
+
+        return ResponseEntity.noContent().build();
+    }
 
 
 
